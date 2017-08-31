@@ -12,6 +12,9 @@ export class SetLocationPage {
   //accessing navigation object set in params from add-place page
   constructor(private navParams: NavParams, private viewCtrl: ViewController){
     this.location = this.navParams.get('location');
+    if(this.navParams.get('isSet')){
+    this.marker = this.location;
+    }
   }
   //map location will be handled by an Angular package
   //   npm install - - save @agm/core
