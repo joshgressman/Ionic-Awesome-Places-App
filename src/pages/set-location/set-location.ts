@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, ViewController } from 'ionic-angular';
 import { Location } from '../../models/location';
 
 @Component({
@@ -10,7 +10,7 @@ export class SetLocationPage {
    location: Location;
    marker: Location;
   //accessing navigation object set in params from add-place page
-  constructor(private navParams: NavParams){
+  constructor(private navParams: NavParams, private viewCtrl: ViewController){
     this.location = this.navParams.get('location');
   }
   //map location will be handled by an Angular package
@@ -18,5 +18,15 @@ export class SetLocationPage {
   onSetMarker(event: any){
     this.marker = new Location(event.coords.lat, event.coords.lng)
     console.log(this.marker);
+  }
+
+  //close modal window with marker data.
+  onConfirm(){
+   this.viewCtrl.dismiss({location: this.marker});
+  }
+
+ //close modal window
+  onAbort(){
+    this.viewCtrl.dismiss();
   }
 }
