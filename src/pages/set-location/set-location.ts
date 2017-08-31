@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Location } from '../../models/location';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
   selector: 'page-set-location',
