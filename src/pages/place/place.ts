@@ -16,6 +16,7 @@ export class PlacePage {
   this.viewCtrl.dismiss();
  }
 
+ //will delete indevidual place
  onDelete(){
    
    this.onLeave();
