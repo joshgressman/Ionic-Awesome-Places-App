@@ -1,5 +1,6 @@
 import { Place } from '../models/place';
 import { Location } from '../models/location';
+
 export class PlacesService {
   private places: Place[] = [];
 
@@ -12,5 +13,8 @@ export class PlacesService {
     return this.places.slice();
   }
 
+  deletePlace(index: number){
+    this.places.splice(index, 1);
+  }
 
 }

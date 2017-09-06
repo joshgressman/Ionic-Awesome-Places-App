@@ -22,8 +22,9 @@ export class HomePage {
   }
 
   //will open the place page in a modal with the idevidual place data passed within the object
-  onOpenPlace(place: Place){
-   const modal = this.modalCtrl.create(PlacePage, {place: place});
+  //index is also passed in the method to remove a place
+  onOpenPlace(place: Place, index: number){
+   const modal = this.modalCtrl.create(PlacePage, {place: place, index: index});
    modal.present();
   }
 }
