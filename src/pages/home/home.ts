@@ -29,6 +29,10 @@ export class HomePage implements OnInit{
   }
 
   ngOnInit(){
-    this.placesService.fetchData();
+    this.placesService.fetchData()
+    .then(
+      (places: Place[]) => {
+        this.places = places;
+      });
   }
 }
