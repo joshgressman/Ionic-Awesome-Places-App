@@ -88,7 +88,8 @@ export class AddPlacePage {
       //save image data to be stored in native file
       const currentName = imageData.replace(/^.*[\\\/]/,'');
       const path = imageData.replace(/[^\/]*$/, '');
-      this.file.moveFile(path, currentName, this.file.dataDirectory, currentName)
+      const newFileName = new Date().getUTCMilliseconds() + '.jpg';
+      this.file.moveFile(path, currentName, this.file.dataDirectory, newFileName)
       .then(
         data => {
           this.imageUrl = data.nativeURL;
